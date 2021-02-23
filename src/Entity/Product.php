@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @UniqueEntity(fields={"name"})
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
 class Product
@@ -18,16 +21,22 @@ class Product
     private $id;
 
     /**
+     * @Assert\NotBlank(message="Please provide a product name")
+     * @Assert\Length(max=20, maxMessage="Maximum 10 characters!", min=2, minMessage="Minimun 2 characters!")
      * @ORM\Column(type="text")
      */
     private $name;
 
     /**
+     * @Assert\NotBlank(message="Please provide a product name")
+     * @Assert\Length(max=100, maxMessage="Maximum 100 characters!", min=10, minMessage="Minimun 10 characters!")
      * @ORM\Column(type="text")
      */
     private $description;
 
     /**
+     * @Assert\NotBlank(message="Please provide a price for the product")
+     * @Assert\Positive(message="The price can not be negative")
      * @ORM\Column(type="integer")
      */
     private $price;
@@ -35,7 +44,10 @@ class Product
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $date_created;
+    private $date_create;
+
+
+
 
     public function getId(): ?int
     {
@@ -78,14 +90,14 @@ class Product
         return $this;
     }
 
-    public function getDateCreated(): ?\DateTimeInterface
+    public function getDateCreate(): ?\DateTimeInterface
     {
-        return $this->date_created;
+        return $this->date_create;
     }
 
-    public function setDateCreated(?\DateTimeInterface $date_created): self
+    public function setDateCreate(?\DateTimeInterface $date_create): self
     {
-        $this->date_created = $date_created;
+        $this->date_create = $date_create;
 
         return $this;
     }
