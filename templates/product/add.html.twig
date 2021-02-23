@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add new Product {% endblock %}
+
+{% block body %}
+
+    <main>
+        <h2>Add new product</h2>
+        {{ form_start(productForm, {'method': 'POST'}) }}
+
+            {{ form_errors(productForm, {'attr': {'class': 'form-error'}}) }}
+
+            {{ form_label(productForm.name, 'Product\'s name: ',
+                {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(productForm.name, {'attr': {'class': 'form-inputs form-input'}}) }}
+            {{ form_errors(productForm.name, {'attr': {'class': 'form-error'}}) }}
+
+            {{ form_label(productForm.name, 'Products\'s description: ',
+                {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(productForm.description, {'attr': {'class': 'form-inputs form-textarea'}}) }}
+            {{ form_errors(productForm.description, {'attr': {'class': 'form-error'}}) }}
+
+            {{ form_label(productForm.price, 'Product\'s price: ',
+                {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(productForm.price, {'attr': {'class': 'form-inputs form-input'}}) }}
+            {{ form_errors(productForm.price, {'attr': {'class': 'form-error'}}) }}
+
+            <button type="submit" class="form-inputs form-button">Add New Product</button>
+
+        {{ form_end(productForm) }}
+    </main>
+
+
+{% endblock %}
