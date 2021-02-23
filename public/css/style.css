@@ -19,6 +19,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     font-family: Arial;
+    font-size: 1.2em;
 }
 
 header {
@@ -47,6 +48,94 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
+    color: #dfdfdf;
+}
+
+nav ul li a:visited, :active {
+    color: #dfdfdf;
+}
+
+.logo {
+    color: darkblue;
+    font-size: 1.6em;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #B0413E;
+}
+
+.product-container {
+    width: 400px;
+    margin-bottom: 20px;
+    border: 1px solid #8282d3;
+    border-radius: 10px;
+    padding: 15px 15px 30px 15px;
+}
+
+.product-container p {
+    margin-bottom: 10px;
+}
+
+.form-inputs {
+    display: inline-block;
+    border-color: #262d80;
+    border-radius: 3px;
+    width: 400px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.form-label {
+    display: block;
+    color: #262d80;
+}
+
+.form-input {
+    height: 40px;
+}
+
+.form-textarea {
+    height: 140px;
+}
+
+.form-error {
+    color: red;
+}
+
+.form-button {
+    display: block;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 850px;
+    margin-bottom: 50px;
+}
+
+main ul li {
+    display: inline-block;
+    margin-bottom: 20px;
+    list-style: none;
+    color: red;
+}
+
+.flash {
+    width: 400px;
+    margin-bottom: 50px;
+    padding: 20px;
+    font-weight: bold;
+    color: #dfdfdf;
+}
+
+.flash-success {
+    background: #7ac024;
+}
+
+.flash-error {
+    background: #8d1229;
 }
 
 footer {
