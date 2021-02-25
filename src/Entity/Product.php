@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -46,8 +47,30 @@ class Product
      */
     private $date_create;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Cart", mappedBy="product")
+     */
+    private $cart;
 
+    public function __construct() {
+        $this->cart = new ArrayCollection();
+    }
 
+    /**
+     * @return ArrayCollection
+     */
+    public function getCart(): ArrayCollection
+    {
+        return $this->cart;
+    }
+
+    /**
+     * @param ArrayCollection $cart
+     */
+    public function setCart(ArrayCollection $cart): void
+    {
+        $this->cart = $cart;
+    }
 
     public function getId(): ?int
     {

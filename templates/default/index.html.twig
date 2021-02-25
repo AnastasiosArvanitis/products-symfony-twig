@@ -1,8 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}Welcome to our Shop!!{% endblock %}
 
 {% block body %}
 
 <h2>Home Page</h2>
+<div>
+    <a href="{{ path('useruser_login') }}">Loggin</a> or <a href="{{ path('useruser_register') }}">Register</a>
+</div>
+
+
 {% endblock %}

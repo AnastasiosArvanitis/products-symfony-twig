@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to our Shop!!{% endblock %}
+
+{% block body %}
+
+    <h2>Register to our Shop!</h2>
+    <div>
+        {{ form_start(registerForm, {'method': 'POST'}) }}
+
+        {{ form_errors(registerForm, {'attr': {'class': 'form-error'}}) }}
+
+
+        {{ form_widget(registerForm, {'attr': {'class': 'form-inputs form-input'}}) }}
+
+        <button type="submit" class="form-inputs form-button">Register</button>
+
+        {{ form_end(registerForm) }}
+        <p>
+            <a href="{{ path('home') }}">Return to home</a>
+        </p>
+
+    </div>
+
+
+{% endblock %}

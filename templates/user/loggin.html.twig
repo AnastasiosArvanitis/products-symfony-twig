@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to our Shop!!{% endblock %}
+
+{% block body %}
+
+    <h2>Loggin Page</h2>
+    <div>
+        <form method="post">
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="_email" class="form-inputs form-input" />
+            <label for="password">Password: </label>
+            <input type="password" name="_password" id="password" class="form-inputs form-input">
+            <button type="submit" class="form-inputs form-button">Login</button>
+        </form>
+        <p>
+            <a href="{{ path('home') }}">Return to home</a>
+        </p>
+
+    </div>
+
+{% endblock %}
